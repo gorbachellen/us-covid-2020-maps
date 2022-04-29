@@ -83,14 +83,10 @@ mapboxgl.accessToken =
                   `<p>Hover over a state!</p>`;
             });
 
-            map.on('click', 'cases2-point', (event) => {
+            map.on('click', 'covidRates-layer', (event) => {
               new mapboxgl.Popup()
                   .setLngLat(event.features[0].geometry.coordinates)
-                  .setHTML(`<strong>Location & Number of Cases:</strong>
-                      ${event.features[0].properties.county} 
-                      ${event.features[0].properties.state} 
-                      <span>: </span>
-                      ${event.features[0].properties.cases}`)
+                  .setHTML(`${event.features[0].properties.rates}`)
                   .addTo(map);
             });
 

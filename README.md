@@ -11,9 +11,10 @@
 ![COVID Cases Map](img/map2.PNG)
 
 ## Functions
+Both maps use interactivity alonside the thematic layer to show two aspects of the COVID pandemic. The first map is a choropleth map of case rates in the US by county where clicking on each county shows county name, state name, and the rate of cases over the entirety of 2020. The second map is a proportional symbol map of case counts in the US by county where clicking on each county shows county name, state name, and the number of cases over the entirety of 2020. 
 
 ## Libraries, Data Sources, Credits, and Acknowledgement
-
+I used Mapbox to efficiently design these custom maps.
 
 The data used to make these maps was gathered from:
 - [The New York Times (Case/Death Data)](https://github.com/nytimes/covid-19-data/blob/43d32dde2f87bd4dafbb7d23f5d9e878124018b8/live/us-counties.csv)
@@ -21,6 +22,3 @@ The data used to make these maps was gathered from:
 - [2018 ACS 5 Year Estimate (Population Data)](https://data.census.gov/cedsci/table?g=0100000US.050000&d=ACS%205-Year%20Estimates%20Data%20Profiles&tid=ACSDP5Y2018.DP05&hidePreview=true)
 
 All credit for this exercise goes to Professor Bo Zhao for creating it and Steven Bao for processing the above data.
-
-
-This file will introduce the primary functions(especially the function which was not covered in the lectures), libraries in use
