@@ -73,21 +73,14 @@ mapboxgl.accessToken =
                 }         
               });
 
-            // hover to view num cases in a popup NEITHER WORKS RN
+            // hover to view num rates in a popup
             map.on('mousemove', ({point}) => {
               const states = map.queryRenderedFeatures(point, {
                   layers: ['covidRates-layer']
               });
               document.getElementById('text-description').innerHTML = states.length ?
-                  `<h3>${states[0].properties.county}</h3><p><strong><em>${states[0].properties.rates}</strong> people per square mile</em></p>` :
-                  `<p>Hover over a state!</p>`;
-            });
-
-            map.on('click', 'covidRates-layer', (event) => {
-              new mapboxgl.Popup()
-                  .setLngLat(event.features[0].geometry.coordinates)
-                  .setHTML(`${event.features[0].properties.rates}`)
-                  .addTo(map);
+                  `<h3>${states[0].properties.county}, ${states[0].properties.state}</h3><p><strong><em>${states[0].properties.rates}</strong> cases per 1000 residents </em></p>` :
+                  `<p>Hover over a county!</p>`;
             });
 
         });

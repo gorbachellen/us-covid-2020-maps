@@ -11,7 +11,7 @@
 ![COVID Cases Map](img/map2.PNG)
 
 ## Functions
-Both maps use interactivity alonside the thematic layer to show two aspects of the COVID pandemic. The first map is a choropleth map of case rates in the US by county where clicking on each county shows county name, state name, and the rate of cases over the entirety of 2020. The second map is a proportional symbol map of case counts in the US by county where clicking on each county shows county name, state name, and the number of cases over the entirety of 2020. 
+Both maps use interactivity alonside the thematic layer to show two aspects of the COVID pandemic. The first map is a choropleth map of case rates in the US by county where hovering over each county shows county name, state name, and the rate of cases over the entirety of 2020. The second map is a proportional symbol map of case counts in the US by county where clicking on each county shows county name, state name, and the number of cases over the entirety of 2020. 
 
 ## Libraries, Data Sources, Credits, and Acknowledgement
 I used Mapbox to efficiently design these custom maps.
