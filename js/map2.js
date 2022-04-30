@@ -22,15 +22,15 @@ mapboxgl.accessToken =
 
             // when loading a geojson, there are two steps
             // add a source of the data and then add the layer out of the source
-            map.addSource('cases2', {
+            map.addSource('us-covid-2020-counts', {
                 type: 'geojson',
                 data: 'assets/us-covid-2020-counts.json'
             });
 
             map.addLayer({
-                    'id': 'cases2-point',
+                    'id': 'us-covid-2020-counts-point',
                     'type': 'circle',
-                    'source': 'cases2',
+                    'source': 'us-covid-2020-counts',
                     'minzoom': 3.5,
                     'paint': {
                         // increase the radii of the circle as the zoom level and dbh value increases
@@ -69,7 +69,7 @@ mapboxgl.accessToken =
 
 
             // click on circle to view num cases in a popup
-            map.on('click', 'cases2-point', (event) => {
+            map.on('click', 'us-covid-2020-counts-point', (event) => {
                 new mapboxgl.Popup()
                     .setLngLat(event.features[0].geometry.coordinates)
                     .setHTML(`<strong>Location & Number of Cases:</strong>

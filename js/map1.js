@@ -39,15 +39,15 @@ mapboxgl.accessToken =
 
             // when loading a geojson, there are two steps
             // add a source of the data and then add the layer out of the source
-            map.addSource('covidRates', {
+            map.addSource('us-covid-2020-rates', {
               type: 'geojson',
               data: 'assets/us-covid-2020-rates.json'
             });
 
             map.addLayer({
-              'id': 'covidRates-layer',
+              'id': 'us-covid-2020-rates-layer',
                 'type': 'fill',
-                'source': 'covidRates',
+                'source': 'us-covid-2020-rates',
                 'paint': {
                     'fill-color': [
                         'step',
@@ -75,11 +75,11 @@ mapboxgl.accessToken =
 
             // hover to view num rates in a popup
             map.on('mousemove', ({point}) => {
-              const states = map.queryRenderedFeatures(point, {
-                  layers: ['covidRates-layer']
+              const covidRates = map.queryRenderedFeatures(point, {
+                  layers: ['us-covid-2020-rates-layer']
               });
-              document.getElementById('text-description').innerHTML = states.length ?
-                  `<h3>${states[0].properties.county}, ${states[0].properties.state}</h3><p><strong><em>${states[0].properties.rates}</strong> cases per 1000 residents </em></p>` :
+              document.getElementById('text-description').innerHTML = covidRates.length ?
+                  `<h3>${covidRates[0].properties.county}, ${covidRates[0].properties.state}</h3><p><strong><em>${covidRates[0].properties.rates}</strong> cases per 1000 residents </em></p>` :
                   `<p>Hover over a county!</p>`;
             });
 
